@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Астропортрет — Татьяна Шумихина</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Forum&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --beige:        #FAF3EA;
+    --plum:         #1A1A1A;
+    --plum-bg:      #2A0E26;
+    --cream:        #F5EDE4;
+    --gold:         #D4A84B;
+    --gold-bright:  #E2B84C;
+    --gold-deep:    #B8923A;
+    --line:         rgba(212, 168, 75, 0.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Forum', Georgia, serif;
+    font-weight: 400;
+    background: var(--beige);
+    color: var(--plum);
+    line-height: 1.55;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  /* HERO — PLUM */
+  .hero { background: var(--plum-bg); color: var(--cream); padding: 70px 32px 64px; }
+  .hero-inner { max-width: 680px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 22px;
+  }
+  .eyebrow .price { color: var(--gold); font-weight: 500; }
+  h1 {
+    font-family: 'Forum', serif;
+    font-weight: 400;
+    font-size: clamp(34px, 4.5vw, 50px);
+    line-height: 1.12;
+    color: var(--cream);
+    margin-bottom: 28px;
+  }
+  .intro {
+    font-family: 'Forum', Georgia, serif;
+    font-size: 21px;
+    line-height: 1.6;
+    color: var(--cream);
+    max-width: 580px;
+  }
+  .intro em { color: var(--gold-bright); font-style: italic; }
+
+  /* CONTENT — BEIGE */
+  .content { background: var(--beige); padding: 50px 32px 60px; }
+  .content-inner { max-width: 680px; margin: 0 auto; }
+
+  .section { padding: 28px 0; border-top: 2px solid var(--gold); }
+  .section.last { border-bottom: 2px solid var(--gold); }
+  .kicker {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .lead {
+    font-family: 'Forum', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--plum);
+    margin-bottom: 14px;
+  }
+  .lead.italic { font-style: italic; }
+  .lead strong { color: var(--gold-deep); font-weight: 600; }
+
+  /* THREE LAYER BLOCKS */
+  .layer-block { margin-top: 22px; padding: 22px 0 4px; }
+  .layer-block + .layer-block {
+    margin-top: 14px;
+    padding-top: 22px;
+    border-top: 1px dashed var(--line);
+  }
+  .layer-block h3 {
+    font-family: 'Forum', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--plum);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .layer-block h3 em {
+    font-family: 'Forum', Georgia, serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* PIVOT — final emotional close before objection */
+  .pivot {
+    text-align: center;
+    padding: 40px 0 8px;
+  }
+  .pivot p {
+    font-family: 'Forum', Georgia, serif;
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--plum);
+    margin-bottom: 14px;
+  }
+  .pivot .inner-voice {
+    font-family: 'Forum', Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--gold-deep);
+    margin-top: 10px;
+    padding: 16px 20px;
+    border-left: 3px solid var(--gold);
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(212, 168, 75, 0.06);
+  }
+
+  /* OBJECTION PULLQUOTE — PLUM */
+  .pullquote {
+    background: var(--plum-bg);
+    color: var(--cream);
+    padding: 64px 32px;
+    text-align: center;
+  }
+  .pullquote-inner { max-width: 540px; margin: 0 auto; }
+  .pullquote-star {
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    color: var(--gold-bright);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .pq-quote {
+    font-family: 'Forum', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(21px, 2.2vw, 26px);
+    line-height: 1.45;
+    color: var(--cream);
+    margin-bottom: 26px;
+  }
+  .pq-answer {
+    font-family: 'Forum', Georgia, serif;
+    font-size: clamp(19px, 2vw, 22px);
+    line-height: 1.55;
+    color: var(--cream);
+  }
+  .pq-answer .first-word {
+    color: var(--gold-bright);
+    font-style: italic;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: clamp(20px, 2vw, 24px);
+  }
+  .pq-answer em { font-style: italic; color: var(--gold-bright); }
+
+  /* FORMATS */
+  .formats { background: var(--beige); padding: 20px 32px 60px; }
+  .formats-inner { max-width: 680px; margin: 0 auto; }
+  .formats-head { text-align: center; margin-bottom: 32px; }
+  .formats-head .kicker { color: var(--gold-deep); margin-bottom: 12px; }
+  .formats-head h2 {
+    font-family: 'Forum', serif;
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 400;
+    color: var(--plum);
+    margin-bottom: 12px;
+  }
+  .formats-sep { width: 60px; height: 2.5px; background: var(--gold); margin: 0 auto; }
+
+  .format-card {
+    border: 1px solid rgba(168, 133, 63, 0.4);
+    border-radius: 14px;
+    padding: 28px 26px;
+    margin-bottom: 16px;
+    background: var(--plum-bg);
+    color: var(--cream);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  .format-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 6px 20px rgba(42, 14, 38, 0.18);
+    transform: translateY(-2px);
+  }
+  .format-card.premium {
+    border: 1.5px solid var(--gold);
+    background: linear-gradient(135deg, #2A0E26 0%, #3A1635 50%, #2A0E26 100%);
+    box-shadow: 0 8px 26px rgba(42, 14, 38, 0.25);
+  }
+  .format-card.premium::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    border-radius: 14px 14px 0 0;
+  }
+  .format-card.premium .format-title { color: var(--gold-bright); }
+  .format-card.premium .format-price { font-size: 28px; font-weight: 700; }
+  .format-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .format-title {
+    font-family: 'Forum', serif;
+    font-size: 24px;
+    color: var(--cream);
+    margin-bottom: 10px;
+  }
+  .format-desc {
+    font-family: 'Forum', Georgia, serif;
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  .format-price {
+    font-family: 'Forum', Georgia, serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--gold-bright);
+    font-weight: 600;
+  }
+
+  /* CTA — PLUM */
+  .cta {
+    background: var(--plum-bg);
+    color: var(--cream);
+    padding: 64px 32px 72px;
+    text-align: center;
+  }
+  .cta-star {
+    font-family: 'Forum', serif;
+    font-size: 28px;
+    color: var(--gold-bright);
+    margin-bottom: 22px;
+    display: block;
+  }
+  .cta-hook {
+    font-family: 'Forum', serif;
+    font-size: clamp(22px, 2.5vw, 28px);
+    color: var(--cream);
+    line-height: 1.3;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--plum);
+    font-family: 'Forum', serif;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    padding: 18px 48px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 26px rgba(212, 168, 75, 0.32);
+  }
+  .cta-button:hover {
+    background: transparent;
+    color: var(--gold-bright);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(200, 169, 107, 0.32);
+  }
+  .cta-sub {
+    margin-top: 20px;
+    font-family: 'Forum', Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--cream);
+    opacity: 0.55;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 50px 22px 46px; }
+    .content { padding: 36px 22px 44px; }
+    .formats { padding: 14px 22px 44px; }
+    .pullquote { padding: 50px 22px; }
+    h1 { font-size: 30px; }
+    .intro { font-size: 19px; }
+    .lead { font-size: 17px; }
+    .layer-block h3 { font-size: 22px; }
+    .pivot p { font-size: 18px; }
+    .pivot .inner-voice { font-size: 19px; }
+    .format-card { padding: 22px 18px; }
+    .cta { padding: 50px 22px 60px; }
+    .cta-button { padding: 16px 36px; font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Астропортрет</div>
+    <h1>Кто я —<br>на самом деле?</h1>
+    <p class="intro">Мы живём с собой всю жизнь. И так не узнаём себя. Бежим, решаем задачи. А ответ <em>на главное</em> — мимо.</p>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="content">
+  <div class="content-inner">
+
+    <section class="section">
+      <div class="kicker">— Зачем разбор —</div>
+      <p class="lead">Бывает: вроде всё нормально. Но внутри — будто живёте чужую версию себя.</p>
+      <p class="lead">Делаете «как надо», а не «как ваше». Стараетесь там, где не надо. И не используете то, что в вас уже есть.</p>
+      <p class="lead italic">И главный вопрос — <strong>«кто я»</strong> — годами без ответа.</p>
+      <p class="lead" style="margin-top:18px;">Астропортрет — это знакомство с собой на глубоком уровне. Не по тестам. По вашей карте.</p>
+    </section>
+
+    <section class="section">
+      <div class="kicker">— Что вы увидите —</div>
+
+      <div class="layer-block">
+        <h3>Сильные стороны — <em>ваша опора</em></h3>
+        <p class="lead">Качества, которые уже сформированы. То, на что можно опереться — даже когда нет сил.</p>
+        <p class="lead">Часто это то, что вы в себе обесцениваете. А оно — ваш фундамент.</p>
+      </div>
+
+      <div class="layer-block">
+        <h3>Что идёт легко — <em>ваш накопленный опыт</em></h3>
+        <p class="lead">Сферы, где у вас уже есть мастерство души. Где можно <strong>сразу реализовывать</strong> — без долгого разгона и сомнений «а получится ли».</p>
+        <p class="lead">Это та лёгкость, которой удивляются окружающие. А вам кажется — «ну это же просто».</p>
+      </div>
+
+      <div class="layer-block">
+        <h3>Слабые зоны — <em>не недостатки, а задачи</em></h3>
+        <p class="lead">Не то, что в вас «не так». А то, ради чего вы здесь. Точки роста этого воплощения.</p>
+        <p class="lead">Когда видите — перестаёте себя винить за то, что «не получается». И начинаете работать с этим иначе.</p>
+      </div>
+    </section>
+
+    <section class="section last">
+      <div class="kicker">— Что меняется —</div>
+      <div class="pivot">
+        <p>Вы перестаёте требовать от себя невозможного.<br>И начинаете опираться на <strong>своё</strong>.</p>
+        <p style="margin-top:18px;">И появляется ощущение, которого раньше не было:</p>
+        <div class="inner-voice">«Я понимаю себя.<br>И знаю, как мне жить.»</div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- OBJECTION -->
+<section class="pullquote">
+  <div class="pullquote-inner">
+    <span class="pullquote-star">✦</span>
+    <p class="pq-quote">«Я уже знаю себя.<br>Много лет в работе с собой.»</p>
+    <p class="pq-answer">
+      <span class="first-word">Возможно.</span><br>
+      А может — вы знаете ту версию, которую построили ожидания.<br>
+      Семья. Школа. «Как надо».<br><br>
+      Карта показывает другое.<br>
+      Не то, что в вас сформировал мир.<br>
+      <em>А то, с чем вы пришли.</em><br><br>
+      Часто после такого разбора женщины говорят:<br>
+      «Вот это — я. А я думала, что я — другая.»
+    </p>
+  </div>
+</section>
+
+<!-- FORMATS -->
+<section class="formats">
+  <div class="formats-inner">
+    <div class="formats-head">
+      <div class="kicker">— Форматы —</div>
+      <h2>Как работаем</h2>
+      <div class="formats-sep"></div>
+    </div>
+
+    <div class="format-card">
+      <div class="format-title">Астропортрет</div>
+      <div class="format-desc">Голосовой разбор без обратной связи. Сильные стороны, накопленный опыт, точки роста. Можно переслушивать.</div>
+      <div class="format-price">150 €</div>
+    </div>
+
+    <div class="format-card premium">
+      <span class="format-badge">Рекомендую</span>
+      <div class="format-title">Астропортрет + созвон</div>
+      <div class="format-desc">Голосовой разбор + встреча. Ваши вопросы по каждому слою — мои ответы. Глубже, точнее, под ваш запрос.</div>
+      <div class="format-price">200 €</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <span class="cta-star">✦</span>
+  <p class="cta-hook">Зову ту,<br>кто хочет узнать себя — настоящую.</p>
+  <a href="https://t.me/astrolog_prognozi?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82.%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B7%D0%BE%D0%B2%D1%83%D1%82.." class="cta-button" target="_blank" rel="noopener">Заказать разбор</a>
+  <p class="cta-sub">от 150 € · два формата</p>
+</div>
+
+</body>
+</html>
